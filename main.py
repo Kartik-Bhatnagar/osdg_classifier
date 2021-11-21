@@ -74,7 +74,7 @@ with body:
         rawtext = str(uploaded_file.read(), 'utf-8')
 
     no_of_lines = st.slider("Select number of lines in summary", 1, 5, 3)
-    if st.button('Get Results):
+    if st.button('Get Results'):
         with summary_container:
             if rawtext == "":
                 st.header('Summary :)')

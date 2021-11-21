@@ -7,7 +7,6 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.cluster.util import cosine_distance
 import numpy as np
-import networkx as nx
 import pickle
 import numpy as np
 import pandas as pd

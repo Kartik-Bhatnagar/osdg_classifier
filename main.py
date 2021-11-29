@@ -8,11 +8,10 @@ import pickle
 import numpy as np
 import pandas as pd
 
-#from transformers import pipeline
 
 header = st.beta_container()
-body = st.container()
-summary_container = st.container()
+body = st.beta_container()
+summary_container = st.beta_container()
 
 ######################## Summarization code  ########################################
 

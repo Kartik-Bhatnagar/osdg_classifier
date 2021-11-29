@@ -10,9 +10,9 @@ import pandas as pd
 
 #from transformers import pipeline
 
-header = st.beta_container()
-body = st.beta_container()
-summary_container = st.beta_container()
+header = st.container()
+body = st.container
+summary_container = st.container
 
 ######################## Summarization code  ########################################
 

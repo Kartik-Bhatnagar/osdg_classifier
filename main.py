@@ -11,8 +11,8 @@ import pandas as pd
 #from transformers import pipeline
 
 header = st.container()
-body = st.container
-summary_container = st.container
+body = st.container()
+summary_container = st.container()
 
 ######################## Summarization code  ########################################
 
@@ -40,15 +40,6 @@ def classify(a):
     
 
 
-# This was a trial for abstractive summarization using transformers which works well but too slow
-# def abstractive(rawtext):
-#    summarizer = pipeline("summarization")
-#    summary = summarizer(rawtext, max_length=300,
-#                         min_length=200, do_sample=False)
-#    summ = summary[0]
-#    return summ['summary_text']
-
-######################## Frontend code  ##############################################
 
 
 with header:

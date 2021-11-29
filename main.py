@@ -10,7 +10,7 @@ import pandas as pd
 
 #from transformers import pipeline
 
-header = st.container()
+header = st.beta_container()
 body = st.container()
 summary_container = st.container()
 

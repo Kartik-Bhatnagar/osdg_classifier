@@ -57,7 +57,7 @@ with body:
 
     sample_col, upload_col = st.beta_columns(2)
     
-    sample_col.subheader('[Or] select a sample file from below')
+    sample_col.subheader('  [OR]  ')
     sample = sample_col.selectbox('Or select a sample file',
                                   ('AsianPaints19_CSR.txt', 'BharatPetroleum19_CSR.txt','BhartiAirtel17_CSR.txt','HdfcBank16_CSR.txt','None'), index=4)
     if sample != 'None':
@@ -65,7 +65,7 @@ with body:
         #st.write(file)
         rawtext = file.read()
 
-    upload_col.subheader('[Or] upload text file here')
+    upload_col.subheader('  [OR]  ')
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
     if uploaded_file is not None:

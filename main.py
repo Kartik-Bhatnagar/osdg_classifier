@@ -96,3 +96,4 @@ with body:
                 expand = st.beta_expander("Expand to see orignal Report")
                 with expand:
                 	st.write(rawtext)
+    st.image('all_goals.jpg')

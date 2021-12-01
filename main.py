@@ -1,23 +1,27 @@
 
-  
 from os import write
 import streamlit as st
+ 
 
 import numpy as np
 import pickle
 import numpy as np
 import pandas as pd
+## import plotly.figure_factory as ff
+import matplotlib.pyplot as plt
 
 
 header = st.beta_container()
 body = st.beta_container()
-summary_container = st.beta_container()
+classify_container = st.beta_container()
+
+
 
 ######################## Summarization code  ########################################
 
 
 def classify(a):
-    filename = 'model2.pickle'
+    filename = 'sgdmodel_.pkl'
     model_reloaded = pickle.load(open(filename, 'rb'))
     
     te =[]
@@ -39,17 +43,21 @@ def classify(a):
     
 
 
-
-
 with header:
-    st.title('OSDG Classifier')
+    titl, imga = st.beta_columns(2)
+    titl.title('SDG Classifier')
+    imga.image('1sdg_logo.svg.gif')
+    
+   
 
 with body:
-    st.header('Osdg classification')
+    st.header('Sdg classification')
     rawtext = st.text_area('Enter Text Here')
+    
 
     sample_col, upload_col = st.beta_columns(2)
-    sample_col.header('Or select a sample file from below')
+    
+    sample_col.subheader('[Or] select a sample file from below')
     sample = sample_col.selectbox('Or select a sample file',
                                   ('AsianPaints19_CSR.txt', 'BharatPetroleum19_CSR.txt','BhartiAirtel17_CSR.txt','HdfcBank16_CSR.txt','None'), index=4)
     if sample != 'None':
@@ -57,26 +65,34 @@ with body:
         #st.write(file)
         rawtext = file.read()
 
-    upload_col.header('Or upload text file here')
+    upload_col.subheader('[Or] upload text file here')
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
     if uploaded_file is not None:
         rawtext = str(uploaded_file.read(), 'utf-8')
 
-    no_of_lines = st.slider("Select number of lines in summary", 1, 5, 3)
+    #no_of_lines = st.slider("Select number of lines in summary", 1, 5, 3)
     if st.button('Get Results'):
-        with summary_container:
+        with classify_container:
             if rawtext == "":
-                st.header('Summary :)')
-                st.write('Please enter text to see summary')
+                st.header('Classification :)')
+                st.write('Please enter text or upload a file to see the Classification')
             else:
                 result = classify(rawtext)
-                st.write(result)
+                st.header('Sdg Classification :)')
+                res, plot = st.beta_columns(2)
+                res.dataframe(result)
+                df = pd.DataFrame(result, columns = ["Score"])
+                #result.hist()
+                #plt.show()
+                #st.pyplot()
+                plot.bar_chart(df)
 
                 # Abstractive summary
                 #st.header('Abstractive method')
                 #abstract = abstractive(rawtext)
                 # st.write(abstract)
-
-                st.header('Actual article')
-                st.write(rawtext)
+                st.header('Report:')
+                expand = st.beta_expander("Expand to see orignal Report")
+                with expand:
+                	st.write(rawtext)

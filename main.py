@@ -51,7 +51,7 @@ with body:
     sample_col, upload_col = st.beta_columns(2)
     sample_col.header('Or select a sample file from below')
     sample = sample_col.selectbox('Or select a sample file',
-                                  ('/tree/main/Sample_files/AsianPaints19_CSR.txt', '/Sample_files/BharatPetroleum19_CSR.txt',  'None'), index=2)
+                                  ('../Sample_files/AsianPaints19_CSR.txt', 'BharatPetroleum19_CSR.txt',  'None'), index=2)
     if sample != 'None':
         file = open(sample, "r", encoding='utf-8')
         #st.write(file)

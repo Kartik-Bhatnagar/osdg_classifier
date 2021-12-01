@@ -70,8 +70,6 @@ with body:
         'Choose your .txt file', type="txt")
     if uploaded_file is not None:
         rawtext = str(uploaded_file.read(), 'utf-8')
-
-    #no_of_lines = st.slider("Select number of lines in summary", 1, 5, 3)
     if st.button('Get Results'):
         with classify_container:
             if rawtext == "":
@@ -80,18 +78,11 @@ with body:
             else:
                 result = classify(rawtext)
                 st.header('Sdg Classification :)')
-                res, plot = st.beta_columns(2)
-                res.dataframe(result)
+                #res, plot = st.beta_columns(2)
+                st.dataframe(result)
                 df = pd.DataFrame(result, columns = ["Score"])
-                #result.hist()
-                #plt.show()
-                #st.pyplot()
-                plot.bar_chart(df)
+                st.bar_chart(df)
 
-                # Abstractive summary
-                #st.header('Abstractive method')
-                #abstract = abstractive(rawtext)
-                # st.write(abstract)
                 st.header('Report:')
                 expand = st.beta_expander("Expand to see orignal Report")
                 with expand:

@@ -87,4 +87,6 @@ with body:
                 expand = st.beta_expander("Expand to see orignal Report")
                 with expand:
                 	st.write(rawtext)
-    st.image('all_goals.jpg')
+    expand_goal = st.beta_expander("United Nation Organisation Sustainable Development Goals")
+    with expand_goal:
+     st.image('all_goals.jpg')

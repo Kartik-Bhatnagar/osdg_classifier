@@ -51,7 +51,6 @@ with header:
    
 
 with body:
-    st.header('Sdg classification')
     rawtext = st.text_area('Enter Text Here')
     
 
@@ -87,6 +86,6 @@ with body:
                 expand = st.beta_expander("Expand to see orignal Report")
                 with expand:
                 	st.write(rawtext)
-    expand_goal = st.beta_expander("United Nation Organisation Sustainable Development Goals")
+    expand_goal = st.beta_expander("United Nation Organisation Sustainable Development Goals [Expand to see]")
     with expand_goal:
      st.image('all_goals.jpg')

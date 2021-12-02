@@ -5,6 +5,17 @@
 
 ### Descriptions of Files In This Repository
 
+
+**sgdmodel_.pkl** - Stochastic Gradient Descent Model for our UNO-SDG Classification
+
+**UNO_SDG_Model_prep.ipynb** - Python Notebook to train SGD Model for UNO-SDG Classification.
+
+**main.py** - Code to deploy our Trained Model in Streamlit App
+
+model2.pickle - Naive Bayes Multiclassification Model (Not used in our final Deployment due to Low Accuracy)
+
+requirements.txt - list of essential libraries used in our deployment
+
 1sdg_logo.svg.gif - UNO-SDG symbol 
 
 all_goals.jpg- Picture of All 17 UNO-SDG 
@@ -17,12 +28,5 @@ BhartiAirtel17_CSR.txt - Sample CSR Report
 
 HdfcBank16_CSR.txt - Sample CSR Report
 
-requirements.txt - list of essential libraries used in our deployment
 
-model2.pickle - Naive Bayes Multiclassification Model (Not used in our final Deployment due to Low Accuracy)
 
-**sgdmodel_.pkl** - Stochastic Gradient Descent Model for our UNO-SDG Classification
-
-**UNO_SDG_Model_prep.ipynb** - Python Notebook to train SGD Model for UNO-SDG Classification.
-
-**main.py** - Code to deploy our Trained Model in Streamlit App

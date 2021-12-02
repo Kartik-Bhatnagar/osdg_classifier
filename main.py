@@ -36,7 +36,7 @@ def classify(a):
             ,"Reduced Inequalites","Sustainable Cities and Communities",
             "Responsible Consumption and Production","Climate Action","Life Below Water","Life On Land"]
     t =zip(li_goals,test_res)
-    df_predic = pd.DataFrame(t,columns=["OSDG","Score"])
+    df_predic = pd.DataFrame(t,columns=["SDG Category","Score"])
     df_predic.index = df_predic.index + 1
     fi= df_predic.sort_values("Score", ascending = [False])
     return((fi))

@@ -35,7 +35,7 @@ def classify(a):
     t =zip(li_goals,test_res)
     df_predic = pd.DataFrame(t,columns=["SDG Category","Probability"])
     df_predic.index = df_predic.index + 1
-    fi= df_predic.sort_values("Score", ascending = [False])
+    fi= df_predic.sort_values("Probability", ascending = [False])
     return((fi))
     
 def pdf_read(file_data):
